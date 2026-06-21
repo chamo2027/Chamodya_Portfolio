@@ -1,0 +1,9 @@
+{
+  "short_name": "Avishka",
+  "name": "Chamodya Senevirathne | Portfolio",
+  "description": "Personal portfolio of Chamodya Senevirathne - Web Developer & Designer",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
