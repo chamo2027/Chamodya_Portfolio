@@ -16,7 +16,7 @@ const projectImageMap = {
   'health-mate': '/images/projects/healthmate-preview.png',
   'job-nest': '/images/projects/Job-Nest-preview.png',
   'moodmate': '/images/projects/moodmate-preview.png',
-  'portfolio-main': '/images/projects/portfolio-preview.png',
+  'portfolio-main': '/images/projects/portfolio image.png',
   'portfolio': '/images/projects/portfolio-preview.png',
   'powersense': '/images/projects/powersence-preview.png',
   'power-sense': '/images/projects/powersence-preview.png',
