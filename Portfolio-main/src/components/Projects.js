@@ -17,7 +17,8 @@ const projectImageMap = {
   'job-nest': '/images/projects/Job-Nest-preview.png',
   'moodmate': '/images/projects/moodmate-preview.png',
   'portfolio-main': '/images/projects/portfolio image.png',
-  'portfolio': '/images/projects/portfolio-preview.png',
+  'chamodya-portfolio': '/images/projects/portfolio image.png',
+  //'portfolio': '/images/projects/portfolio-preview.png',
   'powersense': '/images/projects/powersence-preview.png',
   'power-sense': '/images/projects/powersence-preview.png',
   'triptrek': '/images/projects/triptrek-preview.png',
@@ -35,7 +36,7 @@ const projectImageMap = {
 
 const projectDemoMap = {
   'portfolio': 'https://avishka-portfolio-22.vercel.app/',
-  'portfolio-main': 'https://avishka-portfolio-22.vercel.app/',
+  //'portfolio-main': 'https://avishka-portfolio-22.vercel.app/',
   'powersense': 'https://powersense-af.vercel.app/',
   'healthmate': 'https://healthmate-ds.vercel.app/',
 };
@@ -52,7 +53,8 @@ const projectDescriptionMap = {
   'habbit-tracker': `Built a health tracking application with habit monitoring, reminders, mood journaling, and hydration tracking features. Designed intuitive dashboards to visualize user progress and support healthy lifestyle habits.`,
   'habbit_tracker': `Built a health tracking application with habit monitoring, reminders, mood journaling, and hydration tracking features. Designed intuitive dashboards to visualize user progress and support healthy lifestyle habits.`,
   'healthmate': `Developed a microservices-based healthcare platform using the MERN stack. Implemented JWT authentication, patient appointment booking with slot management, and medical report upload functionality. Utilized Docker and Kubernetes for containerized deployment and service orchestration.`,
-  'powersense': `Full-stack energy management web application that helps users monitor household electricity consumption, estimate bills, and identify high energy-consuming appliances through interactive analytics and visualizations.`
+  'powersense': `Full-stack energy management web application that helps users monitor household electricity consumption, estimate bills, and identify high energy-consuming appliances through interactive analytics and visualizations.`,
+  'chamodya-portfolio': `Designed and developed a responsive portfolio website to showcase my projects, skills, education, and achievements. The website features a modern user interface, smooth navigation, interactive components, and mobile-friendly design to provide a professional online presence.`,
 };
 
 // Manual technology overrides (display name + icon)
@@ -127,7 +129,15 @@ const projectTechMap = {
     { name: 'MongoDB', icon: <FaDatabase className="text-emerald-400" /> },
     { name: 'JavaScript', icon: <SiJavascript className="text-yellow-400" /> },
     { name: 'Tailwind CSS', icon: <FaCode className="text-sky-300" /> },
-  ]
+  ],
+  'chamodya-portfolio': [
+    { name: 'React.js', icon: <FaReact className="text-cyan-400" /> },
+    { name: 'Tailwind CSS', icon: <FaCode className="text-sky-300" /> },
+    { name: 'JavaScript', icon: <SiJavascript className="text-yellow-400" /> },
+    { name: 'HTML5', icon: <SiHtml5 className="text-orange-500" /> },
+    { name: 'CSS3', icon: <SiCss3 className="text-blue-500" /> },
+    { name: 'GitHub', icon: <FaGithub className="text-gray-300" /> },
+  ],
 };
 
 const normalizeKey = (s = '') => s.toLowerCase().replace(/[^a-z0-9]+/g, '-');
@@ -216,6 +226,7 @@ const projectTitleMap = {
   'tripnest': 'TripNest - Online Tour Planning System',
   'powersense': 'PowerSense - Household Energy Management System',
   'healthmate': 'HealthMate - Smart Healthcare Appointment & Telemedicine Platform',
+  'chamodya-portfolio': 'Portfolio Website - Personal Developer Portfolio',
 };
 
 const projectCategoryMap = {
@@ -229,6 +240,7 @@ const projectCategoryMap = {
   'wander-gear-travel-equipment-rental-platform': ['Web Application'],
   'habbit-tracker': ['Mobile App'],
   'habbit_tracker': ['Mobile App'],
+  'chamodya-portfolio': ['Website'],
 };
 
 const toProject = (repo, index) => {
@@ -419,7 +431,7 @@ const Projects = () => {
     fetchRepos();
   }, []);
 
-  const categories = ['All', 'Full Stack', 'Web Application', 'Mobile App'];
+  const categories = ['All', 'Full Stack', 'Web Application', 'Mobile App', 'Website'];
 
   const filterProjects = (category) => {
     setActiveFilter(category);
