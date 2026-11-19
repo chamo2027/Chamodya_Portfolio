@@ -32,6 +32,10 @@ const projectImageMap = {
   'crm-lead-management-system': '/images/projects/crm.png',
   'crm': '/images/projects/crm.png',
   'mobile-app': '/images/projects/mobile-app-photo.jpeg',
+  'portfolio-generator': '/images/projects/portfolio-generator-preview.jpg',
+  'portfolio_generator': '/images/projects/portfolio-generator-preview.jpg',
+  'portfolio-genarator': '/images/projects/portfolio-generator-preview.jpg',
+  'portfolio_genarator': '/images/projects/portfolio-generator-preview.jpg',
 };
 
 const projectDemoMap = {
@@ -39,6 +43,10 @@ const projectDemoMap = {
   //'portfolio-main': 'https://avishka-portfolio-22.vercel.app/',
   'powersense': 'https://powersense-af.vercel.app/',
   'healthmate': 'https://healthmate-ds.vercel.app/',
+  'portfolio-generator': 'https://portfolio-generator-s38c.onrender.com',
+  'portfolio_generator': 'https://portfolio-generator-s38c.onrender.com',
+  'portfolio-genarator': 'https://portfolio-generator-s38c.onrender.com',
+  'portfolio_genarator': 'https://portfolio-generator-s38c.onrender.com',
 };
 
 // Manual description overrides for repositories (keyed by repo name lowercased)
@@ -55,6 +63,14 @@ const projectDescriptionMap = {
   'healthmate': `Developed a microservices-based healthcare platform using the MERN stack. Implemented JWT authentication, patient appointment booking with slot management, and medical report upload functionality. Utilized Docker and Kubernetes for containerized deployment and service orchestration.`,
   'powersense': `Full-stack energy management web application that helps users monitor household electricity consumption, estimate bills, and identify high energy-consuming appliances through interactive analytics and visualizations.`,
   'chamodya-portfolio': `Designed and developed a responsive portfolio website to showcase my projects, skills, education, and achievements. The website features a modern user interface, smooth navigation, interactive components, and mobile-friendly design to provide a professional online presence.`,
+  'ecoguard': `Developing a web-based wildlife monitoring system for park management and wildlife conservation. Designed a Park Manager dashboard to monitor GPS-collared animals, visualize animal locations, and identify normal and high-risk zones. Implementing geofence-based risk detection, automated wildlife alerts, and alert management functionality to help Park Managers monitor potential threats and acknowledge high-risk incidents.`,
+  'eco-guard': `Developing a web-based wildlife monitoring system for park management and wildlife conservation. Designed a Park Manager dashboard to monitor GPS-collared animals, visualize animal locations, and identify normal and high-risk zones. Implementing geofence-based risk detection, automated wildlife alerts, and alert management functionality to help Park Managers monitor potential threats and acknowledge high-risk incidents.`,
+  'portfolio-generator': `Developed a full-stack Portfolio Generator application using the MERN stack, allowing developers to create, customize, and publish personal portfolio websites. Implemented dynamic portfolio creation with personal information, skills, projects, and experience management. Integrated RESTful APIs and MongoDB for data storage, with unique username-based public URLs and portfolio editing functionality.`,
+  'portfolio_generator': `Developed a full-stack Portfolio Generator application using the MERN stack, allowing developers to create, customize, and publish personal portfolio websites. Implemented dynamic portfolio creation with personal information, skills, projects, and experience management. Integrated RESTful APIs and MongoDB for data storage, with unique username-based public URLs and portfolio editing functionality.`,
+  'portfolio-genarator': `Developed a full-stack Portfolio Generator application using the MERN stack, allowing developers to create, customize, and publish personal portfolio websites. Implemented dynamic portfolio creation with personal information, skills, projects, and experience management. Integrated RESTful APIs and MongoDB for data storage, with unique username-based public URLs and portfolio editing functionality.`,
+  'portfolio_genarator': `Developed a full-stack Portfolio Generator application using the MERN stack, allowing developers to create, customize, and publish personal portfolio websites. Implemented dynamic portfolio creation with personal information, skills, projects, and experience management. Integrated RESTful APIs and MongoDB for data storage, with unique username-based public URLs and portfolio editing functionality.`,
+  'govilink': `Developed a cross-platform mobile application connecting farmers, buyers, administrators, and delivery drivers. Implemented role-based authentication and real-time data management using Firebase. Developed the driver module with fleet management, vehicle selection, assigned delivery tracking, and delivery status management. Integrated vehicle image uploads and delivery acceptance and rejection functionalities to streamline agricultural product deliveries.`,
+  'govi-link': `Developed a cross-platform mobile application connecting farmers, buyers, administrators, and delivery drivers. Implemented role-based authentication and real-time data management using Firebase. Developed the driver module with fleet management, vehicle selection, assigned delivery tracking, and delivery status management. Integrated vehicle image uploads and delivery acceptance and rejection functionalities to streamline agricultural product deliveries.`,
 };
 
 // Manual technology overrides (display name + icon)
@@ -138,6 +154,50 @@ const projectTechMap = {
     { name: 'CSS3', icon: <SiCss3 className="text-blue-500" /> },
     { name: 'GitHub', icon: <FaGithub className="text-gray-300" /> },
   ],
+  'portfolio-generator': [
+    { name: 'React.js', icon: <FaReact className="text-cyan-400" /> },
+    { name: 'Node.js', icon: <FaNodeJs className="text-green-400" /> },
+    { name: 'Express.js', icon: <FaCode className="text-gray-300" /> },
+    { name: 'MongoDB', icon: <FaDatabase className="text-emerald-400" /> },
+    { name: 'Tailwind CSS', icon: <FaCode className="text-sky-300" /> },
+    { name: 'REST APIs', icon: <FaCode className="text-indigo-300" /> },
+  ],
+  'portfolio_generator': [
+    { name: 'React.js', icon: <FaReact className="text-cyan-400" /> },
+    { name: 'Node.js', icon: <FaNodeJs className="text-green-400" /> },
+    { name: 'Express.js', icon: <FaCode className="text-gray-300" /> },
+    { name: 'MongoDB', icon: <FaDatabase className="text-emerald-400" /> },
+    { name: 'Tailwind CSS', icon: <FaCode className="text-sky-300" /> },
+    { name: 'REST APIs', icon: <FaCode className="text-indigo-300" /> },
+  ],
+  'portfolio-genarator': [
+    { name: 'React.js', icon: <FaReact className="text-cyan-400" /> },
+    { name: 'Node.js', icon: <FaNodeJs className="text-green-400" /> },
+    { name: 'Express.js', icon: <FaCode className="text-gray-300" /> },
+    { name: 'MongoDB', icon: <FaDatabase className="text-emerald-400" /> },
+    { name: 'Tailwind CSS', icon: <FaCode className="text-sky-300" /> },
+    { name: 'REST APIs', icon: <FaCode className="text-indigo-300" /> },
+  ],
+  'portfolio_genarator': [
+    { name: 'React.js', icon: <FaReact className="text-cyan-400" /> },
+    { name: 'Node.js', icon: <FaNodeJs className="text-green-400" /> },
+    { name: 'Express.js', icon: <FaCode className="text-gray-300" /> },
+    { name: 'MongoDB', icon: <FaDatabase className="text-emerald-400" /> },
+    { name: 'Tailwind CSS', icon: <FaCode className="text-sky-300" /> },
+    { name: 'REST APIs', icon: <FaCode className="text-indigo-300" /> },
+  ],
+  'govilink': [
+    { name: 'Mobile App', icon: <FaMobile className="text-purple-500" /> },
+    { name: 'Firebase', icon: <FaDatabase className="text-emerald-400" /> },
+    { name: 'Realtime DB', icon: <FaDatabase className="text-amber-400" /> },
+    { name: 'JavaScript', icon: <SiJavascript className="text-yellow-400" /> },
+  ],
+  'govi-link': [
+    { name: 'Mobile App', icon: <FaMobile className="text-purple-500" /> },
+    { name: 'Firebase', icon: <FaDatabase className="text-emerald-400" /> },
+    { name: 'Realtime DB', icon: <FaDatabase className="text-amber-400" /> },
+    { name: 'JavaScript', icon: <SiJavascript className="text-yellow-400" /> },
+  ],
 };
 
 const normalizeKey = (s = '') => s.toLowerCase().replace(/[^a-z0-9]+/g, '-');
@@ -178,6 +238,23 @@ const excludedProjectNames = new Set(['af-lab-04', 'af-lab-03']);
 
 const manualProjects = [
   {
+    id: 'govilink',
+    title: 'GoviLink – Agricultural Marketplace and Delivery Management Platform',
+    description: `Developed a cross-platform mobile application connecting farmers, buyers, administrators, and delivery drivers. Implemented role-based authentication and real-time data management using Firebase. Developed the driver module with fleet management, vehicle selection, assigned delivery tracking, and delivery status management. Integrated vehicle image uploads and delivery acceptance and rejection functionalities to streamline agricultural product deliveries.`,
+    technologies: [
+      { name: 'Mobile App', icon: <FaMobile className="text-purple-500" /> },
+      { name: 'Firebase', icon: <FaDatabase className="text-emerald-400" /> },
+      { name: 'Realtime DB', icon: <FaDatabase className="text-amber-400" /> },
+      { name: 'JavaScript', icon: <SiJavascript className="text-yellow-400" /> },
+    ],
+    category: 'Mobile App',
+    filterCategories: ['Mobile App'],
+    github: 'https://github.com/chamo2027/GoviLink',
+    demo: '',
+    image: '',
+    accentColor: 'from-emerald-500 to-teal-600',
+  },
+  {
     id: 'manual-testng-automation-testing',
     title: 'TestNG Automation Testing Project',
     description: `Developed an automated testing project using TestNG, Java, and Maven. Implemented TestNG annotations to manage the test lifecycle, execute test cases, and demonstrate automation testing concepts. Explored Quality Engineering practices and CI/CD integration through industry-based research and practical implementation.`,
@@ -199,6 +276,14 @@ const manualProjects = [
 ];
 
 const projectDisplayPriority = [
+  'ecoguard',
+  'eco-guard',
+  'portfolio-genarator',
+  'portfolio_genarator',
+  'portfolio-generator',
+  'portfolio_generator',
+  'govilink',
+  'govi-link',
   'healthmate',
   'powersense',
   'tripnest',
@@ -227,9 +312,25 @@ const projectTitleMap = {
   'powersense': 'PowerSense - Household Energy Management System',
   'healthmate': 'HealthMate - Smart Healthcare Appointment & Telemedicine Platform',
   'chamodya-portfolio': 'Portfolio Website - Personal Developer Portfolio',
+  'ecoguard': 'EcoGuard – Wildlife Conservation and Monitoring System',
+  'eco-guard': 'EcoGuard – Wildlife Conservation and Monitoring System',
+  'portfolio-generator': 'Portfolio Generator – Dynamic Developer Portfolio Platform',
+  'portfolio_generator': 'Portfolio Generator – Dynamic Developer Portfolio Platform',
+  'portfolio-genarator': 'Portfolio Generator – Dynamic Developer Portfolio Platform',
+  'portfolio_genarator': 'Portfolio Generator – Dynamic Developer Portfolio Platform',
+  'govilink': 'GoviLink – Agricultural Marketplace and Delivery Management Platform',
+  'govi-link': 'GoviLink – Agricultural Marketplace and Delivery Management Platform',
 };
 
 const projectCategoryMap = {
+  'ecoguard': ['Web Application', 'Full Stack'],
+  'eco-guard': ['Web Application', 'Full Stack'],
+  'portfolio-generator': ['Full Stack', 'Web Application'],
+  'portfolio_generator': ['Full Stack', 'Web Application'],
+  'portfolio-genarator': ['Full Stack', 'Web Application'],
+  'portfolio_genarator': ['Full Stack', 'Web Application'],
+  'govilink': ['Mobile App'],
+  'govi-link': ['Mobile App'],
   'healthmate': ['Full Stack', 'Web Application'],
   'powersense': ['Full Stack', 'Web Application'],
   'tripnest': ['Full Stack', 'Web Application'],
@@ -400,7 +501,7 @@ const Projects = () => {
     const fetchRepos = async () => {
       try {
         const res = await fetch(
-          `https://api.github.com/users/${username}/repos?sort=updated&direction=desc&per_page=9`,
+          `https://api.github.com/users/${username}/repos?sort=updated&direction=desc&per_page=30`,
           {
             headers: {
               Accept: 'application/vnd.github+json'
@@ -413,9 +514,13 @@ const Projects = () => {
           const mapped = sortProjectsByPriority(items)
             .filter((r) => !r.private)
             .filter((r) => !excludedProjectNames.has(normalizeKey(r.name)))
-            .slice(0, 9)
+            .slice(0, 15)
             .map((repo, i) => toProject(repo, i));
-          const featuredProjects = [...mapped, ...manualProjects];
+          const fetchedKeys = new Set(items.map((r) => normalizeKey(r.name || '')));
+          const uniqueManual = manualProjects.filter(
+            (p) => !fetchedKeys.has(normalizeKey(p.id)) && !fetchedKeys.has(normalizeKey(p.title))
+          );
+          const featuredProjects = [...mapped, ...uniqueManual];
           setProjects(featuredProjects);
           setFilteredProjects(featuredProjects);
         } else {
