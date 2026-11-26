@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt, FaCode, FaMobile, FaJava, FaImage, FaReact, FaNodeJs, FaDatabase } from 'react-icons/fa';
-import { SiJavascript, SiHtml5, SiCss3, SiPhp, SiMysql } from 'react-icons/si';
+import { FaGithub, FaExternalLinkAlt, FaCode, FaMobile, FaJava, FaImage, FaReact, FaNodeJs, FaDatabase, FaWindows } from 'react-icons/fa';
+import { SiJavascript, SiHtml5, SiCss3, SiPhp, SiMysql, SiNextdotjs, SiTypescript, SiPrisma, SiPostgresql } from 'react-icons/si';
 import profile from '../data/profile';
 
 // Map repository names to preview images in public/images/projects
@@ -14,6 +14,7 @@ const projectImageMap = {
   'habbit_tracker': '/images/projects/mobile-app-photo.jpeg',
   'healthmate': '/images/projects/healthmate-preview.png',
   'health-mate': '/images/projects/healthmate-preview.png',
+  'healthmate-ds': '/images/projects/healthmate-preview.png',
   'job-nest': '/images/projects/Job-Nest-preview.png',
   'moodmate': '/images/projects/moodmate-preview.png',
   'portfolio-main': '/images/projects/portfolio image.png',
@@ -36,6 +37,17 @@ const projectImageMap = {
   'portfolio_generator': '/images/projects/portfolio-generator-preview.jpg',
   'portfolio-genarator': '/images/projects/portfolio-generator-preview.jpg',
   'portfolio_genarator': '/images/projects/portfolio-generator-preview.jpg',
+  'updatepilot': '/images/projects/updatepilot-preview.png',
+  'update-pilot': '/images/projects/updatepilot-preview.png',
+  'updatepilot-project': '/images/projects/updatepilot-preview.png',
+  'updatepilot_project': '/images/projects/updatepilot-preview.png',
+  'govilink': '/images/projects/govilink-preview.jpg',
+  'govi-link': '/images/projects/govilink-preview.jpg',
+  'govilink-mobile-app': '/images/projects/govilink-preview.jpg',
+  'govilink_mobile_app': '/images/projects/govilink-preview.jpg',
+  'ecoguard': '/images/projects/ecoguard-preview.png',
+  'eco-guard': '/images/projects/ecoguard-preview.png',
+  'ecoguard-wildlife-conservation-and-monitoring-system': '/images/projects/ecoguard-preview.png',
 };
 
 const projectDemoMap = {
@@ -61,6 +73,7 @@ const projectDescriptionMap = {
   'habbit-tracker': `Built a health tracking application with habit monitoring, reminders, mood journaling, and hydration tracking features. Designed intuitive dashboards to visualize user progress and support healthy lifestyle habits.`,
   'habbit_tracker': `Built a health tracking application with habit monitoring, reminders, mood journaling, and hydration tracking features. Designed intuitive dashboards to visualize user progress and support healthy lifestyle habits.`,
   'healthmate': `Developed a microservices-based healthcare platform using the MERN stack. Implemented JWT authentication, patient appointment booking with slot management, and medical report upload functionality. Utilized Docker and Kubernetes for containerized deployment and service orchestration.`,
+  'healthmate-ds': `Developed a microservices-based healthcare platform using the MERN stack. Implemented JWT authentication, patient appointment booking with slot management, and medical report upload functionality. Utilized Docker and Kubernetes for containerized deployment and service orchestration.`,
   'powersense': `Full-stack energy management web application that helps users monitor household electricity consumption, estimate bills, and identify high energy-consuming appliances through interactive analytics and visualizations.`,
   'chamodya-portfolio': `Designed and developed a responsive portfolio website to showcase my projects, skills, education, and achievements. The website features a modern user interface, smooth navigation, interactive components, and mobile-friendly design to provide a professional online presence.`,
   'ecoguard': `Developing a web-based wildlife monitoring system for park management and wildlife conservation. Designed a Park Manager dashboard to monitor GPS-collared animals, visualize animal locations, and identify normal and high-risk zones. Implementing geofence-based risk detection, automated wildlife alerts, and alert management functionality to help Park Managers monitor potential threats and acknowledge high-risk incidents.`,
@@ -71,6 +84,12 @@ const projectDescriptionMap = {
   'portfolio_genarator': `Developed a full-stack Portfolio Generator application using the MERN stack, allowing developers to create, customize, and publish personal portfolio websites. Implemented dynamic portfolio creation with personal information, skills, projects, and experience management. Integrated RESTful APIs and MongoDB for data storage, with unique username-based public URLs and portfolio editing functionality.`,
   'govilink': `Developed a cross-platform mobile application connecting farmers, buyers, administrators, and delivery drivers. Implemented role-based authentication and real-time data management using Firebase. Developed the driver module with fleet management, vehicle selection, assigned delivery tracking, and delivery status management. Integrated vehicle image uploads and delivery acceptance and rejection functionalities to streamline agricultural product deliveries.`,
   'govi-link': `Developed a cross-platform mobile application connecting farmers, buyers, administrators, and delivery drivers. Implemented role-based authentication and real-time data management using Firebase. Developed the driver module with fleet management, vehicle selection, assigned delivery tracking, and delivery status management. Integrated vehicle image uploads and delivery acceptance and rejection functionalities to streamline agricultural product deliveries.`,
+  'govilink-mobile-app': `Developed a cross-platform mobile application connecting farmers, buyers, administrators, and delivery drivers. Implemented role-based authentication and real-time data management using Firebase. Developed the driver module with fleet management, vehicle selection, assigned delivery tracking, and delivery status management. Integrated vehicle image uploads and delivery acceptance and rejection functionalities to streamline agricultural product deliveries.`,
+  'govilink_mobile_app': `Developed a cross-platform mobile application connecting farmers, buyers, administrators, and delivery drivers. Implemented role-based authentication and real-time data management using Firebase. Developed the driver module with fleet management, vehicle selection, assigned delivery tracking, and delivery status management. Integrated vehicle image uploads and delivery acceptance and rejection functionalities to streamline agricultural product deliveries.`,
+  'updatepilot': `Developed a full-stack software update management platform for monitoring and managing software updates across Windows computers. Implemented a web-based dashboard for device management, application inventory, update detection, and update history. Developed a Windows Agent using WinGet to scan installed applications, detect available updates, execute user-approved updates, and verify installation results. Integrated secure device communication, update tracking, and audit logging to support centralized software update management.`,
+  'update-pilot': `Developed a full-stack software update management platform for monitoring and managing software updates across Windows computers. Implemented a web-based dashboard for device management, application inventory, update detection, and update history. Developed a Windows Agent using WinGet to scan installed applications, detect available updates, execute user-approved updates, and verify installation results. Integrated secure device communication, update tracking, and audit logging to support centralized software update management.`,
+  'updatepilot-project': `Developed a full-stack software update management platform for monitoring and managing software updates across Windows computers. Implemented a web-based dashboard for device management, application inventory, update detection, and update history. Developed a Windows Agent using WinGet to scan installed applications, detect available updates, execute user-approved updates, and verify installation results. Integrated secure device communication, update tracking, and audit logging to support centralized software update management.`,
+  'updatepilot_project': `Developed a full-stack software update management platform for monitoring and managing software updates across Windows computers. Implemented a web-based dashboard for device management, application inventory, update detection, and update history. Developed a Windows Agent using WinGet to scan installed applications, detect available updates, execute user-approved updates, and verify installation results. Integrated secure device communication, update tracking, and audit logging to support centralized software update management.`,
 };
 
 // Manual technology overrides (display name + icon)
@@ -130,6 +149,15 @@ const projectTechMap = {
     { name: 'Firebase', icon: <FaDatabase className="text-emerald-400" /> },
   ],
   'healthmate': [
+    { name: 'React.js', icon: <FaReact className="text-cyan-400" /> },
+    { name: 'Node.js', icon: <FaNodeJs className="text-green-400" /> },
+    { name: 'Express.js', icon: <FaCode className="text-gray-300" /> },
+    { name: 'MongoDB', icon: <FaDatabase className="text-emerald-400" /> },
+    { name: 'Docker', icon: <FaCode className="text-sky-300" /> },
+    { name: 'Kubernetes', icon: <FaCode className="text-indigo-300" /> },
+    { name: 'Tailwind CSS', icon: <FaCode className="text-cyan-300" /> },
+  ],
+  'healthmate-ds': [
     { name: 'React.js', icon: <FaReact className="text-cyan-400" /> },
     { name: 'Node.js', icon: <FaNodeJs className="text-green-400" /> },
     { name: 'Express.js', icon: <FaCode className="text-gray-300" /> },
@@ -198,6 +226,54 @@ const projectTechMap = {
     { name: 'Realtime DB', icon: <FaDatabase className="text-amber-400" /> },
     { name: 'JavaScript', icon: <SiJavascript className="text-yellow-400" /> },
   ],
+  'govilink-mobile-app': [
+    { name: 'Mobile App', icon: <FaMobile className="text-purple-500" /> },
+    { name: 'Firebase', icon: <FaDatabase className="text-emerald-400" /> },
+    { name: 'Realtime DB', icon: <FaDatabase className="text-amber-400" /> },
+    { name: 'JavaScript', icon: <SiJavascript className="text-yellow-400" /> },
+  ],
+  'govilink_mobile_app': [
+    { name: 'Mobile App', icon: <FaMobile className="text-purple-500" /> },
+    { name: 'Firebase', icon: <FaDatabase className="text-emerald-400" /> },
+    { name: 'Realtime DB', icon: <FaDatabase className="text-amber-400" /> },
+    { name: 'JavaScript', icon: <SiJavascript className="text-yellow-400" /> },
+  ],
+  'updatepilot': [
+    { name: 'Next.js', icon: <SiNextdotjs className="text-white" /> },
+    { name: 'TypeScript', icon: <SiTypescript className="text-blue-400" /> },
+    { name: 'Node.js', icon: <FaNodeJs className="text-green-400" /> },
+    { name: 'Express.js', icon: <FaCode className="text-gray-300" /> },
+    { name: 'Prisma', icon: <SiPrisma className="text-emerald-300" /> },
+    { name: 'PostgreSQL', icon: <SiPostgresql className="text-sky-400" /> },
+    { name: 'WinGet', icon: <FaWindows className="text-blue-500" /> },
+  ],
+  'update-pilot': [
+    { name: 'Next.js', icon: <SiNextdotjs className="text-white" /> },
+    { name: 'TypeScript', icon: <SiTypescript className="text-blue-400" /> },
+    { name: 'Node.js', icon: <FaNodeJs className="text-green-400" /> },
+    { name: 'Express.js', icon: <FaCode className="text-gray-300" /> },
+    { name: 'Prisma', icon: <SiPrisma className="text-emerald-300" /> },
+    { name: 'PostgreSQL', icon: <SiPostgresql className="text-sky-400" /> },
+    { name: 'WinGet', icon: <FaWindows className="text-blue-500" /> },
+  ],
+  'updatepilot-project': [
+    { name: 'Next.js', icon: <SiNextdotjs className="text-white" /> },
+    { name: 'TypeScript', icon: <SiTypescript className="text-blue-400" /> },
+    { name: 'Node.js', icon: <FaNodeJs className="text-green-400" /> },
+    { name: 'Express.js', icon: <FaCode className="text-gray-300" /> },
+    { name: 'Prisma', icon: <SiPrisma className="text-emerald-300" /> },
+    { name: 'PostgreSQL', icon: <SiPostgresql className="text-sky-400" /> },
+    { name: 'WinGet', icon: <FaWindows className="text-blue-500" /> },
+  ],
+  'updatepilot_project': [
+    { name: 'Next.js', icon: <SiNextdotjs className="text-white" /> },
+    { name: 'TypeScript', icon: <SiTypescript className="text-blue-400" /> },
+    { name: 'Node.js', icon: <FaNodeJs className="text-green-400" /> },
+    { name: 'Express.js', icon: <FaCode className="text-gray-300" /> },
+    { name: 'Prisma', icon: <SiPrisma className="text-emerald-300" /> },
+    { name: 'PostgreSQL', icon: <SiPostgresql className="text-sky-400" /> },
+    { name: 'WinGet', icon: <FaWindows className="text-blue-500" /> },
+  ],
 };
 
 const normalizeKey = (s = '') => s.toLowerCase().replace(/[^a-z0-9]+/g, '-');
@@ -238,23 +314,6 @@ const excludedProjectNames = new Set(['af-lab-04', 'af-lab-03']);
 
 const manualProjects = [
   {
-    id: 'govilink',
-    title: 'GoviLink – Agricultural Marketplace and Delivery Management Platform',
-    description: `Developed a cross-platform mobile application connecting farmers, buyers, administrators, and delivery drivers. Implemented role-based authentication and real-time data management using Firebase. Developed the driver module with fleet management, vehicle selection, assigned delivery tracking, and delivery status management. Integrated vehicle image uploads and delivery acceptance and rejection functionalities to streamline agricultural product deliveries.`,
-    technologies: [
-      { name: 'Mobile App', icon: <FaMobile className="text-purple-500" /> },
-      { name: 'Firebase', icon: <FaDatabase className="text-emerald-400" /> },
-      { name: 'Realtime DB', icon: <FaDatabase className="text-amber-400" /> },
-      { name: 'JavaScript', icon: <SiJavascript className="text-yellow-400" /> },
-    ],
-    category: 'Mobile App',
-    filterCategories: ['Mobile App'],
-    github: 'https://github.com/chamo2027/GoviLink',
-    demo: '',
-    image: '',
-    accentColor: 'from-emerald-500 to-teal-600',
-  },
-  {
     id: 'manual-testng-automation-testing',
     title: 'TestNG Automation Testing Project',
     description: `Developed an automated testing project using TestNG, Java, and Maven. Implemented TestNG annotations to manage the test lifecycle, execute test cases, and demonstrate automation testing concepts. Explored Quality Engineering practices and CI/CD integration through industry-based research and practical implementation.`,
@@ -276,12 +335,18 @@ const manualProjects = [
 ];
 
 const projectDisplayPriority = [
+  'updatepilot',
+  'update-pilot',
+  'updatepilot-project',
+  'updatepilot_project',
   'ecoguard',
   'eco-guard',
   'portfolio-genarator',
   'portfolio_genarator',
   'portfolio-generator',
   'portfolio_generator',
+  'govilink-mobile-app',
+  'govilink_mobile_app',
   'govilink',
   'govi-link',
   'healthmate',
@@ -311,6 +376,7 @@ const projectTitleMap = {
   'tripnest': 'TripNest - Online Tour Planning System',
   'powersense': 'PowerSense - Household Energy Management System',
   'healthmate': 'HealthMate - Smart Healthcare Appointment & Telemedicine Platform',
+  'healthmate-ds': 'HealthMate - Smart Healthcare Appointment & Telemedicine Platform',
   'chamodya-portfolio': 'Portfolio Website - Personal Developer Portfolio',
   'ecoguard': 'EcoGuard – Wildlife Conservation and Monitoring System',
   'eco-guard': 'EcoGuard – Wildlife Conservation and Monitoring System',
@@ -320,9 +386,19 @@ const projectTitleMap = {
   'portfolio_genarator': 'Portfolio Generator – Dynamic Developer Portfolio Platform',
   'govilink': 'GoviLink – Agricultural Marketplace and Delivery Management Platform',
   'govi-link': 'GoviLink – Agricultural Marketplace and Delivery Management Platform',
+  'govilink-mobile-app': 'GoviLink – Agricultural Marketplace and Delivery Management Platform',
+  'govilink_mobile_app': 'GoviLink – Agricultural Marketplace and Delivery Management Platform',
+  'updatepilot': 'UpdatePilot – Software Update Intelligence and Management Platform',
+  'update-pilot': 'UpdatePilot – Software Update Intelligence and Management Platform',
+  'updatepilot-project': 'UpdatePilot – Software Update Intelligence and Management Platform',
+  'updatepilot_project': 'UpdatePilot – Software Update Intelligence and Management Platform',
 };
 
 const projectCategoryMap = {
+  'updatepilot': ['Full Stack', 'Web Application'],
+  'update-pilot': ['Full Stack', 'Web Application'],
+  'updatepilot-project': ['Full Stack', 'Web Application'],
+  'updatepilot_project': ['Full Stack', 'Web Application'],
   'ecoguard': ['Web Application', 'Full Stack'],
   'eco-guard': ['Web Application', 'Full Stack'],
   'portfolio-generator': ['Full Stack', 'Web Application'],
@@ -331,7 +407,10 @@ const projectCategoryMap = {
   'portfolio_genarator': ['Full Stack', 'Web Application'],
   'govilink': ['Mobile App'],
   'govi-link': ['Mobile App'],
+  'govilink-mobile-app': ['Mobile App'],
+  'govilink_mobile_app': ['Mobile App'],
   'healthmate': ['Full Stack', 'Web Application'],
+  'healthmate-ds': ['Full Stack', 'Web Application'],
   'powersense': ['Full Stack', 'Web Application'],
   'tripnest': ['Full Stack', 'Web Application'],
   'tripnest-travel-management-platform': ['Full Stack', 'Web Application'],
@@ -361,7 +440,7 @@ const toProject = (repo, index) => {
     github: repo.html_url,
     demo: getProjectDemo(repo.name) || repo.homepage || '',
     image: getProjectImage(repo.name),
-    imageFit: ['healthmate', 'powersense'].includes(nameKey) ? 'contain' : 'cover',
+    imageFit: ['powersense'].includes(nameKey) ? 'contain' : 'cover',
     accentColor: gradientPalette[index % gradientPalette.length],
   };
 };
