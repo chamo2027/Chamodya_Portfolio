@@ -1,7 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaCode, FaServer, FaMobile, FaTools, FaDatabase } from 'react-icons/fa';
-import { SiOpenjdk, SiJavascript, SiReact, SiNodedotjs, SiSpring, SiExpress, SiMongodb, SiMysql, SiPostgresql, SiDocker, SiAmazonaws, SiGit, SiGithub, SiHtml5, SiCss3, SiTailwindcss, SiTypescript, SiKotlin, SiCplusplus, SiCsharp, SiPhp } from 'react-icons/si';
+import { FaCode, FaServer, FaMobile, FaTools, FaDatabase, FaVial } from 'react-icons/fa';
+import { 
+  SiOpenjdk, SiJavascript, SiReact, SiNodedotjs, SiSpring, SiExpress, 
+  SiMongodb, SiMysql, SiPostgresql, SiDocker, SiAmazonaws, SiGit, 
+  SiGithub, SiHtml5, SiCss3, SiTailwindcss, SiTypescript, SiKotlin, 
+  SiCplusplus, SiCsharp, SiPhp, SiNextdotjs, SiPrisma, SiFirebase, 
+  SiKubernetes, SiAndroid, SiApachemaven, SiPostman 
+} from 'react-icons/si';
 
 const skills = [
   {
@@ -9,50 +15,65 @@ const skills = [
     icon: <FaCode className="text-2xl text-primary" />,
     items: [
       { name: 'Java', icon: <SiOpenjdk className="text-4xl" />, level: 85 },
-      { name: 'JavaScript', icon: <SiJavascript className="text-4xl" />, level: 80 },
-      { name: 'TypeScript', icon: <SiTypescript className="text-4xl" />, level: 70 },
-      { name: 'Kotlin', icon: <SiKotlin className="text-4xl" />, level: 65 },
+      { name: 'JavaScript', icon: <SiJavascript className="text-4xl" />, level: 85 },
+      { name: 'TypeScript', icon: <SiTypescript className="text-4xl" />, level: 80 },
+      { name: 'Kotlin', icon: <SiKotlin className="text-4xl" />, level: 70 },
       { name: 'C++', icon: <SiCplusplus className="text-4xl" />, level: 70 },
       { name: 'C#', icon: <SiCsharp className="text-4xl" />, level: 65 },
       { name: 'PHP', icon: <SiPhp className="text-4xl" />, level: 75 },
     ]
   },
   {
-    category: 'Frontend',
+    category: 'Frontend Development',
     icon: <FaCode className="text-2xl text-primary" />,
     items: [
-      { name: 'React.js', icon: <SiReact className="text-4xl" />, level: 80 },
+      { name: 'React.js', icon: <SiReact className="text-4xl" />, level: 85 },
+      { name: 'Next.js', icon: <SiNextdotjs className="text-4xl" />, level: 80 },
+      { name: 'Tailwind CSS', icon: <SiTailwindcss className="text-4xl" />, level: 85 },
       { name: 'HTML5', icon: <SiHtml5 className="text-4xl" />, level: 90 },
       { name: 'CSS3', icon: <SiCss3 className="text-4xl" />, level: 85 },
-      { name: 'Tailwind CSS', icon: <SiTailwindcss className="text-4xl" />, level: 80 },
     ]
   },
   {
-    category: 'Backend',
+    category: 'Backend & Frameworks',
     icon: <FaServer className="text-2xl text-primary" />,
     items: [
-      { name: 'Node.js', icon: <SiNodedotjs className="text-4xl" />, level: 80 },
+      { name: 'Node.js', icon: <SiNodedotjs className="text-4xl" />, level: 85 },
+      { name: 'Express.js', icon: <SiExpress className="text-4xl" />, level: 85 },
       { name: 'Spring Boot', icon: <SiSpring className="text-4xl" />, level: 75 },
-      { name: 'Express.js', icon: <SiExpress className="text-4xl" />, level: 80 },
+      { name: 'RESTful APIs', icon: <FaCode className="text-4xl" />, level: 85 },
     ]
   },
   {
-    category: 'Databases',
+    category: 'Databases & ORM',
     icon: <FaDatabase className="text-2xl text-primary" />,
     items: [
-      { name: 'MongoDB', icon: <SiMongodb className="text-4xl" />, level: 80 },
+      { name: 'MongoDB', icon: <SiMongodb className="text-4xl" />, level: 85 },
+      { name: 'PostgreSQL', icon: <SiPostgresql className="text-4xl" />, level: 80 },
       { name: 'MySQL', icon: <SiMysql className="text-4xl" />, level: 85 },
-      { name: 'PostgreSQL', icon: <SiPostgresql className="text-4xl" />, level: 75 },
+      { name: 'Firebase', icon: <SiFirebase className="text-4xl" />, level: 80 },
+      { name: 'Prisma ORM', icon: <SiPrisma className="text-4xl" />, level: 75 },
     ]
   },
   {
-    category: 'DevOps & Tools',
+    category: 'DevOps & Cloud',
     icon: <FaTools className="text-2xl text-primary" />,
     items: [
       { name: 'Git', icon: <SiGit className="text-4xl" />, level: 85 },
       { name: 'GitHub', icon: <SiGithub className="text-4xl" />, level: 90 },
-      { name: 'Docker', icon: <SiDocker className="text-4xl" />, level: 70 },
+      { name: 'Docker', icon: <SiDocker className="text-4xl" />, level: 75 },
+      { name: 'Kubernetes', icon: <SiKubernetes className="text-4xl" />, level: 70 },
       { name: 'AWS', icon: <SiAmazonaws className="text-4xl" />, level: 70 },
+    ]
+  },
+  {
+    category: 'Mobile & QA Testing',
+    icon: <FaMobile className="text-2xl text-primary" />,
+    items: [
+      { name: 'Android Dev', icon: <SiAndroid className="text-4xl" />, level: 75 },
+      { name: 'TestNG Automation', icon: <FaVial className="text-4xl" />, level: 80 },
+      { name: 'Apache Maven', icon: <SiApachemaven className="text-4xl" />, level: 75 },
+      { name: 'Postman', icon: <SiPostman className="text-4xl" />, level: 85 },
     ]
   }
 ];
@@ -174,12 +195,12 @@ const Skills = () => {
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {[
-              'RESTful APIs', 'GraphQL', 'Microservices', 'System Design',
-              'Agile/Scrum', 'CI/CD', 'TDD', 'OOP', 'Data Structures',
-              'Algorithms', 'Design Patterns', 'Clean Code', 'Git Flow',
-              'Responsive Design', 'UI/UX Principles', 'Performance Optimization',
-              'Security Best Practices', 'API Documentation', 'Code Review',
-              'Mentoring', 'Project Management', 'Technical Writing'
+              'RESTful APIs', 'JWT Authentication', 'Microservices', 'System Design',
+              'Geofencing & Telemetry', 'Agile/Scrum', 'CI/CD Pipelines', 'TDD', 'OOP', 
+              'Data Structures', 'Algorithms', 'Design Patterns', 'Clean Architecture', 
+              'WinGet & OS Tooling', 'Responsive Design', 'UI/UX Principles', 
+              'Performance Optimization', 'Security Best Practices', 'API Documentation', 
+              'Test Automation', 'Fleet Tracking', 'Technical Writing'
             ].map((skill, index) => (
               <div key={index} className="flex items-center">
                 <span className="w-2 h-2 rounded-full bg-cyan-400 mr-2 shadow-[0_0_10px_rgba(34,211,238,0.8)]"></span>
